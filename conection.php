@@ -3,13 +3,13 @@
 // conection to data base
 class conection {
   private $server = "localhost";
-  private $user = "id21395081_niicoph";
-  private $password = "Test_1515";
+  private $user = "root";
+  private $password = "";
   private $conection;
 
   public function __construct() {
       try {
-          $this->conection = new PDO("mysql:host=$this->server;dbname=id21395081_logniicoph", $this->user, $this->password);
+          $this->conection = new PDO("mysql:host=$this->server;dbname=usuarios", $this->user, $this->password);
           $this->conection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       } catch (PDOException $error) {
           echo "Connection error: " . $error->getMessage();
